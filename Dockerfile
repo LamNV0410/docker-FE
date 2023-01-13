@@ -44,7 +44,7 @@ CMD [ "npm", "start" ]
 FROM nginx:alpine
 
 # Copy config nginx
-COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/test1.conf
 
 WORKDIR /usr/share/nginx/html
 
