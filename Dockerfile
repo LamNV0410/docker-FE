@@ -43,10 +43,10 @@ CMD [ "npm", "start" ]
 # 2. For Nginx setup
 FROM nginx:alpine
 
-# Copy config nginx
-COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
+# Copy config nginx with project name dockerfe : Because the config nginx is included
+COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/dockerfe.conf
 
-WORKDIR /usr/share/nginx/html
+WORKDIR /var/www/dockerfe/html
 
 # Remove default nginx static assets
 RUN rm -rf ./*
