@@ -46,7 +46,7 @@ FROM nginx:alpine
 # Copy config nginx
 COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/test1.conf
 
-WORKDIR /usr/share/nginx/html
+WORKDIR /var/www/app/docker-FE
 
 # Remove default nginx static assets
 RUN rm -rf ./*
